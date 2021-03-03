@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+import "google/protobuf/wrappers.proto";
+
+option (scalapb.options) = {
+  package_name: "kz.dar.tech.akka.persistence.template.event.proto"
+  flat_package: true
+};
+
+message CreateBookEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.BookShopProtoEvent";
+  string bookId = 1;
+  string name = 2;
+  string author = 3;
+}
+
+message FindBookEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.BookShopProtoEvent";
+  string bookId = 1;
+  string name = 2;
+  string author = 3;
+}
+
+message AddedToCartEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.BookShopProtoEvent";
+  string bookId = 1;
+}
+
+message DeletedBookFromCartEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.BookShopProtoEvent";
+  string bookId = 1;
+}
+
+message SellBookEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.BookShopProtoEvent";
+  string bookId = 1;
+}

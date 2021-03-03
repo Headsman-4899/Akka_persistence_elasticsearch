@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+import "google/protobuf/wrappers.proto";
+
+option (scalapb.options) = {
+  package_name: "kz.dar.tech.akka.persistence.template.event.proto"
+  flat_package: true
+};
+
+
+message EmployeeCreateEntityEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.EmployeeProtoEvent";
+  string ts = 1;
+  string employeeId = 2;
+  string firstName = 3;
+  string lastName = 4;
+  string middleName = 5;
+  string birthDate = 6;
+  string position = 7;
+  bool isLayoffs = 8;
+  map<string, FamilyV1> family = 9;
+}
+
+message EmployeeEditEntityEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.EmployeeProtoEvent";
+  string ts = 1;
+  string employeeId = 2;
+  string firstName = 3;
+  string lastName = 4;
+  string middleName = 5;
+  string birthDate = 6;
+  string position = 7;
+  bool isLayoffs = 8;
+  map<string, FamilyV1> family = 9;
+}
+
+message EmployeeLayoffEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.EmployeeProtoEvent";
+  string ts = 1;
+  string employeeId = 2;
+  bool isLayoffs = 3;
+}
+
+message FamilyV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.EmployeeProtoEvent";
+  string name = 1;
+  int32 age = 2;
+  string sex = 3;
+}

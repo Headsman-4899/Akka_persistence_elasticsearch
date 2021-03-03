@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+import "scalapb/scalapb.proto";
+import "google/protobuf/wrappers.proto";
+
+option (scalapb.options) = {
+  package_name: "kz.dar.tech.akka.persistence.template.event.proto"
+  flat_package: true
+};
+
+message CreatePostEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.PostProtoEvent";
+  string ts = 1;
+  string postId = 2;
+  string name = 3;
+  string address = 4;
+}
+
+message RegisterPostEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.PostProtoEvent";
+  string ts = 1;
+  string postId = 2;
+}
+
+message SendPostEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.PostProtoEvent";
+  string ts = 1;
+  string postId = 2;
+}
+
+message ReceivePostEventV1 {
+  option (scalapb.message).extends = "kz.dar.tech.akka.persistence.template.model.protobuf.PostProtoEvent";
+  string ts = 1;
+  string postId = 2;
+}
