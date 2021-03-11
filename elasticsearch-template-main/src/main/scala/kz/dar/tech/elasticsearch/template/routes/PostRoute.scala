@@ -9,6 +9,8 @@ import kz.dar.tech.elasticsearch.template.model.PostModel
 import kz.dar.tech.elasticsearch.template.util.Codec
 import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport
 import kz.dar.tech.elasticsearch.template.service.PostHandleService
+import akka.http.scaladsl.marshalling.ToResponseMarshallable
+import io.circe.generic.codec.DerivedAsObjectCodec.deriveCodec
 
 import scala.concurrent.{ExecutionContext, Future}
 

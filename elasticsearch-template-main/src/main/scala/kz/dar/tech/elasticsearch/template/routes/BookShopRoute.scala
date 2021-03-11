@@ -1,5 +1,6 @@
 package kz.dar.tech.elasticsearch.template.routes
 
+import akka.http.scaladsl.marshalling.ToResponseMarshallable
 import akka.actor.typed.ActorSystem
 import akka.http.scaladsl.server.Directives.{entity, _}
 import akka.http.scaladsl.server.Route
@@ -8,7 +9,6 @@ import com.typesafe.config.Config
 import kz.dar.tech.elasticsearch.template.model.{BookShopModel, PostModel}
 import kz.dar.tech.elasticsearch.template.util.Codec
 import de.heikoseeberger.akkahttpcirce.FailFastCirceSupport
-import io.circe.generic.codec.DerivedAsObjectCodec.deriveCodec
 import kz.dar.tech.elasticsearch.template.service.{BookShopHandleService, PostHandleService}
 import io.circe.syntax._
 

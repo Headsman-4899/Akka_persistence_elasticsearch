@@ -1,7 +1,7 @@
 package kz.dar.tech.akka.persistence.template.serializable.proto
 
 import akka.serialization.SerializerWithStringManifest
-import kz.dar.tech.akka.persistence.template.event.proto.{CreateBookEventV1, EmployeeCreateEntityEventV1}
+import kz.dar.tech.akka.persistence.template.event.proto.{CreateBookEventV1}
 
 class BookShopSerializer extends SerializerWithStringManifest {
 

@@ -11,7 +11,6 @@ import kz.dar.tech.akka.persistence.template.util.EventProcessorSettings
 import java.io.File
 import java.util.concurrent.CountDownLatch
 
-import akka.actor.TypedActor.dispatcher
 
 /**
  * Template persistence with emdedded cassandra.
@@ -42,6 +41,8 @@ object Boot {
   def apply(): Behavior[NotUsed] = {
     Behaviors.setup { context =>
       implicit val system = context.system
+
+      implicit val executionContext = system.executionContext
 
       val httpPort = context.system.settings.config.getInt("http-server.port")
 
